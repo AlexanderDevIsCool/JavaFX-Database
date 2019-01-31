@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane fx:id="AnmlInsertPane" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <TextField fx:id="AnmlType" layoutX="24.0" layoutY="38.0" promptText="Тип" />
+            <Label layoutX="24.0" layoutY="21.0" text="Тип" />
+            <TextField fx:id="AnmlName" layoutX="185.0" layoutY="38.0" promptText="Назва" />
+            <Label layoutX="185.0" layoutY="21.0" text="Назва" />
+            <Label layoutX="24.0" layoutY="206.0" text="Вік" />
+            <TextField fx:id="AnmlPrice" layoutX="22.0" layoutY="97.0" prefHeight="25.0" prefWidth="149.0" promptText="Ціна" />
+            <Label layoutX="22.0" layoutY="82.0" text="Ціна" />
+            <TextField fx:id="AnmlCountry" layoutX="183.0" layoutY="97.0" prefHeight="25.0" prefWidth="149.0" promptText="Телефон" />
+            <Label layoutX="183.0" layoutY="82.0" text="Країна" />
+            <TextField fx:id="AnmlProvider" layoutX="183.0" layoutY="158.0" promptText="Постачальник" />
+            <Label layoutX="183.0" layoutY="141.0" text="Постачальник" />
+            <TextField fx:id="AnmlAvgLife" layoutX="22.0" layoutY="158.0" promptText="Сер. життя" />
+            <Label layoutX="22.0" layoutY="141.0" text="Сер. життя" />
+            <TextField fx:id="AnmlFoto" editable="false" layoutX="352.0" layoutY="298.0" prefHeight="25.0" prefWidth="243.0" promptText="Шлях до фотографії" />
+            <Label layoutX="352.0" layoutY="276.0" text="Шлях до фотографії" />
+            <Button layoutX="352.0" layoutY="331.0" mnemonicParsing="false" onAction="#showImageDialogAnmlInsert" prefHeight="25.0" prefWidth="80.0" text="Відкрити" />
+            <ImageView fx:id="AnmlImage" fitHeight="250.0" fitWidth="250.0" layoutX="346.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" />
+            <Button layoutX="24.0" layoutY="356.0" mnemonicParsing="false" onAction="#insertAnml" prefHeight="25.0" prefWidth="88.0" text="Зберегти" />
+            <TextField fx:id="AnmlAge" layoutX="22.0" layoutY="223.0" promptText="Вік" />
+            <Label layoutX="24.0" layoutY="263.0" text="Їда" />
+            <TextField fx:id="AnmlEat" layoutX="24.0" layoutY="286.0" prefHeight="25.0" prefWidth="312.0" />
+            <TextField fx:id="AnmlCount" layoutX="183.0" layoutY="223.0" />
+            <Label layoutX="183.0" layoutY="206.0" text="Кількість" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="EmplInsertPane" prefHeight="200.0" prefWidth="200.0" visible="false">
+         <children>
+            <TextField fx:id="EmplName" layoutX="14.0" layoutY="31.0" promptText="Ім'я" />
+            <Label layoutX="14.0" layoutY="14.0" text="Ім'я" />
+            <TextField fx:id="EmplSurName" layoutX="175.0" layoutY="31.0" promptText="Прізвище" />
+            <Label layoutX="175.0" layoutY="14.0" text="Прізвище" />
+            <Label layoutX="16.0" layoutY="244.0" text="Дата народження" />
+            <TextField fx:id="EmplAddress" layoutX="14.0" layoutY="94.0" prefHeight="25.0" prefWidth="312.0" promptText="Адрес" />
+            <Label layoutX="17.0" layoutY="70.0" text="Адрес" />
+            <TextField fx:id="EmplTelefon" layoutX="14.0" layoutY="153.0" prefHeight="25.0" prefWidth="312.0" promptText="Телефон" />
+            <Label layoutX="17.0" layoutY="128.0" text="Телефон" />
+            <TextField fx:id="EmplSalary" layoutX="175.0" layoutY="206.0" promptText="Зарплата" />
+            <Label layoutX="175.0" layoutY="189.0" text="Зарплата " />
+            <TextField fx:id="EmplPosition" layoutX="14.0" layoutY="206.0" promptText="Посада" />
+            <Label layoutX="14.0" layoutY="189.0" text="Посада" />
+            <TextField fx:id="EmplFoto" editable="false" layoutX="342.0" layoutY="288.0" prefHeight="25.0" prefWidth="250.0" promptText="Шлях до фотографії" />
+            <Label layoutX="342.0" layoutY="266.0" text="Шлях до фотографії" />
+            <Button layoutX="342.0" layoutY="321.0" mnemonicParsing="false" onAction="#showImageDialogEmplInsert" prefHeight="25.0" prefWidth="80.0" text="Відкрити" />
+            <ImageView fx:id="EmplImage" fitHeight="250.0" fitWidth="250.0" layoutX="336.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" />
+            <ComboBox fx:id="EmplDay" layoutX="14.0" layoutY="271.0" prefHeight="25.0" prefWidth="88.0" promptText="День" />
+            <ComboBox fx:id="EmplMonth" layoutX="119.0" layoutY="271.0" prefHeight="25.0" prefWidth="88.0" promptText="Місяць" />
+            <ComboBox fx:id="EmplYear" layoutX="229.0" layoutY="271.0" prefHeight="25.0" prefWidth="88.0" promptText="Рік" />
+            <Button layoutX="14.0" layoutY="346.0" mnemonicParsing="false" onAction="#insertEmpl" prefHeight="25.0" prefWidth="88.0" text="Зберегти" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

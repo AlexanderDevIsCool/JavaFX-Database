@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="MainBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kursoval.FXMLKursovaLController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Дія">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#menuActionExit" text="Вийти" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Операції">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#menuOperationInsert" text="Добавити" />
+                  <MenuItem mnemonicParsing="false" onAction="#menuOperationUpdate" text="Редагувати" />
+                  <MenuItem fx:id="SellMenuItem" mnemonicParsing="false" onAction="#menuOperationSell" text="Продати" />
+                  <MenuItem mnemonicParsing="false" onAction="#menuOperationDelete" text="Видалити" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Таблиці">
+            <items>
+                  <RadioMenuItem mnemonicParsing="false" onAction="#menuTablesEmployee" selected="true" text="Працівники">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="ZooTables" />
+                     </toggleGroup>
+                  </RadioMenuItem>
+                  <RadioMenuItem mnemonicParsing="false" onAction="#menuTablesAnimals" text="Тварини" toggleGroup="$ZooTables" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Пошук">
+               <items>
+                  <MenuItem fx:id="searchEmployee" mnemonicParsing="false" onAction="#menuSearch" text="Пошук Працівників" />
+                  <MenuItem fx:id="searchGoods" mnemonicParsing="false" onAction="#animalSearch" text="Пошук Тварин" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <TableView fx:id="TableData" onMouseClicked="#tableDataMouseClick" prefHeight="475.0" prefWidth="577.0" BorderPane.alignment="CENTER" />
+   </center>
+   <right>
+      <VBox fx:id="SellBox" prefHeight="475.0" prefWidth="272.0" BorderPane.alignment="CENTER">
+         <children>
+            <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="417.0" prefWidth="280.0" VBox.vgrow="ALWAYS">
+               <content>
+                  <Accordion fx:id="SellAcordion" prefHeight="452.0" prefWidth="270.0" />
+               </content>
+            </ScrollPane>
+            <Label fx:id="PriceShow" alignment="CENTER" contentDisplay="CENTER" prefHeight="64.0" prefWidth="272.0" VBox.vgrow="NEVER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#actionSell" prefHeight="25.0" prefWidth="295.0" text="Продати" VBox.vgrow="NEVER" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#removeSellPane" prefHeight="25.0" prefWidth="282.0" text="Забрати " />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#canselSell" prefHeight="25.0" prefWidth="372.0" text="Відмінити" />
+         </children>
+      </VBox>
+   </right>
+</BorderPane>
